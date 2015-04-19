@@ -41,11 +41,12 @@ if(isset($_POST['timeSelect'])) {
 
 ?>
 <head>
-<title>Advising Login</title>
+	<title>Advising Login</title>
+	<link rel="stylesheet" href="css/style.css">
 </head>
 
 	<div style="text-align: center;">
-	<div style="box-sizing: border-box; display: inline-block; width: auto; max-width: 480px; background-color: #FFFFFF; border: 2px solid #0361A8; border-radius: 5px; box-shadow: 0px 0px 8px #0361A8; margin: 50px auto auto;">
+	<div style="box-sizing: border-box; display: inline-block; width: 475px; max-width: 480px; background-color: #FFFFFF; border: 2px solid #0361A8; border-radius: 5px; box-shadow: 0px 0px 8px #0361A8; margin: 50px auto auto;">
 	<div style="background: #0361A8; border-radius: 5px 5px 0px 0px; padding: 15px;"><span style="font-family: verdana,arial; color: #D4D4D4; font-size: 1.00em; font-weight:bold;">Registration Advising Sign Up</span></div>
 	<div style="background: ; padding: 15px">
 	<img id="backgroundImage" src="http://userpages.umbc.edu/~jwees1/CMSC331/Project1/UMBCretrievers_LOGO.png" style="z-index:-100" width="200" height="200">
@@ -56,29 +57,40 @@ if(isset($_POST['timeSelect'])) {
 	table.center { margin-left:auto; margin-right:auto; }
 	.error { font-family: verdana,arial; color: #D41313; font-size: 1.00em; }
 	</style>
-<form action="individualTime.php" method="post">
+<form action="individualDay.php" method="post">
 <input type="hidden" name="action" value="login">
 <input type="hidden" name="hide" value="">
 <table class='center'>
-<a>Please select between individual and group advising</a>!
-<tr><select name="advisingType" id="advisingStyle" style="border-radius: 5px; background-color:#2EB82E">
-    <option>Group Advising</option>
-    <option selected>Individual Advising</option>
-  </select></tr><br><br>
-<a id="selectAdvisorText">Please select your advisor!</a><br>
-<tr><select name="advisorSelect" id="advisorSelect" style="border-radius: 5px; background-color:#2EB82E;" >
+<h3 style="margin-top:-10px">Please select between individual<br> and group advising:</h3>
+<tr>
+<div style="margin-top:-5px" class="dropdown dropdown-dark">
+    <select name="advisingType" id="advisingStyle" class="dropdown-select">
+        <option selected>Group Advising</option>
+        <option>Individual Advising</option>
+    </select>
+</div></tr><br><br>
+<h3 style="margin-top:-5px" id="selectAdvisorText">Please select your advisor:</h3><br>
+<tr>
+<div style="margin-top:-20px" class="dropdown dropdown-dark">
+    <select name="advisorSelect" id="advisorSelect" class="dropdown-select" >
 	<option value="<?php echo $advisor ?>" selected><?php echo $advisor ?></option>
-  </select></tr><br><br>
-  <a id="selectDayText" >Please select a day for advising!</a><br>
-<tr><select name="daySelect" id="daySelect" style="border-radius: 5px; background-color:#2EB82E;">
+    </select>
+</div></tr><br><br>
+<h3 style="margin-top:-5px" id="selectDayText" >Please select a day for advising:</h3><br>
+<tr>
+<div style="margin-top:-20px" class="dropdown dropdown-dark">
+    <select name="daySelect" id="daySelect" class="dropdown-select">
 	<option value="<?php echo $date ?>" selected><?php echo $date ?></option>
-  </select></tr><br><br>
-  <a id="selectTimeText">Please select a time for advising!</a><br>
-<tr><select name="timeSelect" id="timeSelect" style="border-radius: 5px; background-color:#2EB82E;" onchange="this.form.submit()">
-	<option selected disabled hidden value=''></option>
-							     
-<?php foreach($times as $key => $value) { ?> <option value="<?php echo $key ?>"><?php echo $value ?></option><?php }?>
-  </select></tr><br><br>
+    </select>
+</div></tr><br><br>
+<h3 style="margin-top:-5px" id="selectTimeText">Please select a time for advising:</h3><br>
+<tr>
+<div style="margin-top:-20px" class="dropdown dropdown-dark">
+    <select name="timeSelect" id="timeSelect" class="dropdown-select" onchange="this.form.submit()">
+	<option selected disabled hidden value=''></option>							     
+	<?php foreach($times as $key => $value) { ?> <option value="<?php echo $key ?>"><?php echo $value ?></option><?php }?>
+    </select>
+</div></tr><br><br>
 </table>
 </form>
 </div></div></div>
