@@ -38,7 +38,8 @@ ini_set('session.bug_compat_42', 0);
 ?>
 
 <head>
-<title>Advising Login</title>
+	<title>Advising Login</title>
+	<link rel="stylesheet" href="css/style.css">
 </head>
 
 	<div style="text-align: center;">
@@ -49,13 +50,11 @@ ini_set('session.bug_compat_42', 0);
 	<style type="text/css" scoped>
 	td { text-align:left; font-family: verdana,arial; color: #064073; font-size: 1.00em; }
 	input { border: 1px solid #CCCCCC; border-radius: 5px; color: #666666; display: inline-block; font-size: 1.00em;  padding: 5px; width: 100%; }
-	input[type="button"], input[type="reset"], input[type="submit"] { height: auto; width: auto; cursor: pointer; box-shadow: 0px 0px 5px #0361A8; float: right; text-align:right; margin-top: 10px; margin-left:7px;}
+	
 	table.center { margin-left:auto; margin-right:auto; }
 	.error { font-family: verdana,arial; color: #D41313; font-size: 1.00em; }
 	</style>
 <form action="studentLogin.php" method="post">
-<input type="hidden" name="action" value="login">
-<input type="hidden" name="hide" value="">
 <table class='center'>
 <tr><td>Name:</td><td><input type="text" name="Name"></td></tr>
 <tr><td>UMBC ID#:</td><td><input type="password" name="ID"></td></tr>
@@ -112,8 +111,8 @@ ini_set('session.bug_compat_42', 0);
 
 <tr><td colspan=2>&nbsp;</td></tr>
 <tr><td colspan=2><a>New users will autogenerate a new account</a>!</td></tr>
-</table>
-<input type="submit" value="Submit" align="right">
+</table><br>
+<input class="button black" type="submit" value="Submit" style="width:75px;">
 </form>
 </div></div></div>
 <body bgcolor="#003366">

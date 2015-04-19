@@ -15,9 +15,9 @@
 	table.center { margin-left:auto; margin-right:auto; }
 	.error { font-family: verdana,arial; color: #D41313; font-size: 1.00em; }
 	</style>
-	<h3>Please select between student <br>and advisor login:</h3>
-	<a href="http://userpages.umbc.edu/~jwees1/CMSC331/Project1/studentLogin.php" class="button grey" style="width:100px;">Student Login</a><br>
-	<br><a href="index.html" class="button grey" style="width:100px;">Advisor Login</a>
+	<h3 style="margin-top:-10px">Please select between student <br>and advisor login:</h3>
+	<a href="http://userpages.umbc.edu/~jwees1/CMSC331/Project1/studentLogin.php" class="button black" style="width:100px;">Student Login</a><br>
+	<br><a href="index.html" class="button black" style="width:100px;">Advisor Login</a>
 </div></div></div>
 
 <body bgcolor="#003366">
