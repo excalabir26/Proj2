@@ -16,15 +16,26 @@ $val1 = $_POST['Name'];
 $val2 = $_POST['ID'];
 
 $val3 = $_POST['Major'];
-$sql="";
+$val4 = NULL;
 
-if(isset($val1)){ 
-	$sql = "REPLACE INTO jwees1.StudentRegistration SET Name ='$val1', ID = '$val2', Major = '$val3', AppointmentTime = '0000-00-00 00:00:00'";
-	}
+$sql="SELECT * FROM jwees1.StudentRegistration WHERE Name ='$val1' AND ID='$val2'";
+$result = mysql_query( $sql, $conn);
+
+if(mysql_num_rows($result)){
+	$sql = "UPDATE jwees1.StudentRegistration SET Major = '$val3' WHERE Name ='$val1' and ID = '$val2'";
+} else {
+	$sql = "INSERT INTO jwees1.StudentRegistration SET Name ='$val1', ID = '$val2', Major = '$val3', AppointmentTime = '$val4'";
+}
+
+
+//if(isset($val1)){ 
+//	$sql = "REPLACE INTO jwees1.StudentRegistration SET Name ='$val1', ID = '$val2', Major = '$val3', AppointmentTime = '0000-00-00 00:00:00'";
+//}
 	
 $retval = mysql_query( $sql, $conn );
 
 $_SESSION['username'] = $_POST['Name'];
+$_SESSION['studentID'] = $_POST['ID'];
 	   
 mysql_select_db('jwees1');
 

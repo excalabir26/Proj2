@@ -18,7 +18,7 @@ $advisor = $_SESSION['seshAdvisor'];
 $date = $_SESSION['seshDate'];
 $time = $_SESSION['seshTime'];
 
-$sql = " SELECT DISTINCT(Time) AS Time FROM jwees1.IndividualAdvising WHERE Advisor = '$advisor' AND Full = 0 AND Date = '$date'";
+$sql = "SELECT DISTINCT(Time) AS Time FROM jwees1.IndividualAdvising WHERE Advisor = '$advisor' AND Full = 0 AND Date = '$date'";
 $dateResults = mysql_query($sql, $conn);
 
 $times = array();
