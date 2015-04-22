@@ -44,7 +44,7 @@ function detectmob() {
 
     var left = wLeft + (window.innerWidth / 2) - (400 / 2);
     var top = wTop + (window.innerHeight / 2) - (400 / 2);
-	window.open ('advisingType.php', 'newwindow', config='height=400, width=400, toolbar=no, menubar=no, scrollbars=no, resizable=0, location=0, directories=no, status=no, top = ' + top + ' left = ' + left + ' ');   
+	window.open ('advisingType.php', 'newwindow', config='height=400, width=400, toolbar=no, menubar=no, scrollbars=no, resizable=0, location=0, directories=no, status=no');   
     return false;
   }
 }
